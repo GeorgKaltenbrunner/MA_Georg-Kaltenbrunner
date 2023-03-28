@@ -17,7 +17,7 @@ def count_early_tardy_orders(order_id):
     :param order_id: The finished orders id.
     """
 
-    if GlobaleVariables.order_tracking[order_id]['time_finished'] < GlobaleVariables.order_tracking[order_id][
+    if GlobaleVariables.order_tracking[order_id]['time_finished'] <= GlobaleVariables.order_tracking[order_id][
         'due_date']:
         GlobaleVariables.early_orders += 1
         earliness = GlobaleVariables.order_tracking[order_id]['due_date'] - GlobaleVariables.order_tracking[order_id][
