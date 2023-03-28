@@ -30,7 +30,7 @@ def predict_sftt(order):
     elif GlobaleVariables.model == 'last_sftt':
         try:
             tracking_df = GlobaleVariables.tracking_df
-            y_pred = tracking_df['sftt'].loc[tracking_df['product_type'] == order.product_type].tail(1)
+            y_pred = tracking_df['sftt'].loc[tracking_df['product_type'] == order.product_type].tail(1).item()
 
             # Calculate PRD
             order.prd = order.due_date - y_pred
